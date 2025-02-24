@@ -1,0 +1,856 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LEMOUBREZA</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* Navbar Styling */
+.navbar-custom {
+    background-color: transparent;
+}
+
+.navbar-custom .nav-link {
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.navbar-custom .nav-link:hover {
+    color: #5e5438; /* Warm brown */
+}
+
+.navbar {
+    background-color: #d9a05b; /* Warm golden tone */
+}
+
+/* Home Section Background */
+.c-item {
+    height: 480px;
+}
+
+.c-img {
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+}
+
+.carousel-caption h1 {
+    font-size: 4rem;
+    color: #5e5438; /* Warm brown */
+}
+
+.carousel-caption p {
+    font-size: 1.5rem;
+    color: #3c2f22; /* Deep brown */
+}
+
+.carousel-caption button {
+    font-size: 1.25rem;
+    padding: 0.5rem 1.5rem;
+    background-color: #a14d3a; /* Deep red */
+    color: #fff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.carousel-caption button:hover {
+    background-color: #82392a; /* Darker red */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .carousel-caption h1 {
+        font-size: 3rem;
+    }
+    .carousel-caption p {
+        font-size: 1.25rem;
+    }
+    .carousel-caption button {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-caption {
+        top: 15%;
+        padding: 0 1rem;
+    }
+    .carousel-caption h1 {
+        font-size: 2rem;
+    }
+    .carousel-caption p {
+        font-size: 1rem;
+    }
+    .carousel-caption button {
+        font-size: 0.9rem;
+        padding: 0.4rem 1.2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .carousel-caption {
+        top: 10%;
+        padding: 0 1rem;
+    }
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+    .carousel-caption p {
+        font-size: 0.9rem;
+    }
+    .carousel-caption button {
+        font-size: 0.8rem;
+        padding: 0.3rem 1rem;
+    }
+}
+
+/* Overlay for Readability */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Home Content Styling */
+.home-content {
+    z-index: 1;
+}
+
+/* Button Styling */
+.btn-custom {
+    background-color: #a14d3a; /* Deep red */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: #82392a; /* Darker red */
+    color: #fff;
+}
+
+/* Main Heading Style */
+.home-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 0;
+    z-index: 1;
+    color: #5e5438; /* Warm brown */
+}
+
+/* Section Title Styling */
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #5e5438; /* Warm brown */
+    padding-top: 20px;
+}
+
+/* Card Styling for Featured Projects */
+.tour-card {
+    background-color: #a14d3a; /* Deep red */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 12px;
+    padding: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.tour-card:hover {
+    transform: scale(1.05);
+}
+
+/* General Background for Other Sections */
+.section-background {
+    background-color: #f5e1c8; /* Light beige */
+}
+
+/* Ensure All Images in Cards Have the Same Height */
+.tour-card-img {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #5e5438; /* Dark brown */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Lemoubreza</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#Place-Carousel">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Add this CSS to your <style> section or a separate CSS file -->
+<style>
+    .navbar-custom {
+        background-color: #8897b4; /* Change this to your desired color */
+    }
+
+    .navbar-dark .navbar-nav .nav-link {
+        color: #ffffff; /* Change link color */
+        transition: color 0.3s;
+    }
+
+    .navbar-dark .navbar-nav .nav-link:hover {
+        color: #5e5438; /* Change hover color */
+    }
+</style>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <style>
+        /* Custom CSS for responsive carousel */
+        .c-item {
+            height: 80vh; /* Adjust based on your needs */
+            min-height: 400px;
+        }
+        
+        .c-img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover; /* Ensures images maintain aspect ratio while filling container */
+            filter: brightness(0.6); /* Optional: improves text visibility */
+        }
+        
+        .carousel-caption {
+            bottom: 30%;
+            transform: translateY(50%);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .c-item {
+                height: 60vh;
+            }
+            
+            .carousel-caption h1 {
+                font-size: 2rem !important;
+            }
+            
+            .carousel-caption p {
+                font-size: 1rem !important;
+                margin-bottom: 0.5rem !important;
+            }
+            
+            .carousel-caption .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .c-item {
+                height: 50vh;
+            }
+            
+            .carousel-caption {
+                bottom: 20%;
+            }
+        }
+    </style>
+    
+    <div id="Place-Carousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators and controls remain the same -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#Place-Carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#Place-Carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#Place-Carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        
+        <div class="carousel-inner">
+            <!-- Carousel items updated -->
+            <div class="carousel-item active c-item">
+                <img src="D. Midori.jpg" class="d-block w-100 c-img" alt="The Peak At Lemoubruza">
+                <div class="carousel-caption text-center">
+                    <h1 class="display-4 fw-bold animated fadeIn">The Peak At Lemoubrèza</h1>
+                    <p class="lead animated fadeIn">Experience the breathtaking views and luxury living.</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item c-item">
+                <img src="Jasmine (1).png" class="d-block w-100 c-img" alt="Jasmine">
+                <div class="carousel-caption text-center">
+                    <h1 class="display-4 fw-bold animated fadeIn">Jasmine</h1>
+                    <p class="lead animated fadeIn">Single Attached/ Duplex</p>
+                </div>
+            </div>
+            
+            <div class="carousel-item c-item">
+                <img src="Linea.png" class="d-block w-100 c-img" alt="Linea">
+                <div class="carousel-caption text-center">
+                    <h1 class="display-4 fw-bold animated fadeIn">Linnea</h1>
+                    <p class="lead animated fadeIn">Single Attached</p>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#Place-Carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#Place-Carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+    
+    <style>
+        /* Carousel styling */
+        .c-item {
+            height: 480px; /* Fixed height for carousel items */
+        }
+    
+        .c-img {
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6); /* Darken images for better text visibility */
+        }
+    
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark overlay for captions */
+            padding: 20px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+        }
+    
+        .carousel-caption:hover {
+            background-color: rgba(0, 0, 0, 0.8); /* Darker on hover */
+        }
+    
+        .carousel-caption h1 {
+            color: #ffffff; /* White text for better contrast */
+            font-family: 'Arial', sans-serif; /* Clean font */
+            font-weight: bold;
+        }
+    
+        .carousel-caption p {
+            color: #f8f9fa; /* Light gray text */
+        }
+    
+        .btn-custom {
+            background-color: #007bff; /* Blue button color */
+            color: #ffffff;
+            border: none;
+            padding: 12px 24px; /* Larger padding for buttons */
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+            border-radius: 5px; /* Rounded corners for buttons */
+        }
+    
+        .btn-custom:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+            transform: scale(1.05); /* Slightly enlarge on hover */
+        }
+    
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .carousel-caption h1 {
+                font-size: 2.5rem; /* Smaller font size for mobile */
+            }
+    
+            .carousel-caption p {
+                font-size: 1rem; /* Smaller font size for mobile */
+            }
+    
+            
+            .btn-custom {
+                font-size: 1rem; /* Smaller button size for mobile */
+            }
+        }
+    
+        @media (max-width: 576px) {
+            .carousel-caption h1 {
+                font-size: 2rem; /* Even smaller font size for extra small screens */
+            }
+    
+            .carousel-caption p {
+                font-size: 0.9rem; /* Even smaller font size for extra small screens */
+            }
+    
+            .btn-custom {
+                font-size: 0.9rem; /* Even smaller button size for extra small screens */
+            }
+        }
+    </style>
+
+    <!-- Popular Tours Section -->
+    <section id="tourist-spot" class="py-5 section-background">
+        <div class="container">
+            <h2 class="section-title text-center">Midori Condo</h2>
+            <div class="row mt-4">
+                <!-- Tour Card 1 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal1">
+                        <img src="Midori/Mi D1.jpg" class="card-img-top img-fluid tour-card-img" alt="Uluwatu Temple">
+                        <div class="card-body">
+                            <h5 class="card-title">Midori Mid-Rise Condo</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 2 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal2">
+                        <img src="Midori/Mi D2 (2).jpg" class="card-img-top img-fluid tour-card-img" alt="Tegallalang Rice Terraces">
+                        <div class="card-body">
+                            <h5 class="card-title">Specs</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 3 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal3">
+                        <img src="Midori/Mi D3.jpg" class="card-img-top img-fluid tour-card-img" alt="Sacred Monkey Forest">
+                        <div class="card-body">
+                            <h5 class="card-title">Floor Plan</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title text-center">Jasmine Single Attached</h2>
+            <div class="row mt-4">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal4">
+                        <img src="Jasmine/J D1.jpg" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Jasmine</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 5 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal5">
+                        <img src="Jasmine/J D2.png" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Specs</h5>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 6 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal6">
+                        <img src="Jasmine/J D3.png" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Floor Plan</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title text-center">Linnea</h2>
+            <div class="row mt-4">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal7">
+                        <img src="Linea/L D1.jpg" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Linnea</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 8 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal8">
+                        <img src="Jasmine/J D2.png" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Specs</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 9 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal9">
+                        <img src="Jasmine/J D3.png" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Floor Plan</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="section-title text-center">Adeline</h2>
+            <div class="row mt-4">
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal10">
+                        <img src="Adeline/A D1.jpg" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Adeline</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 11 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal11">
+                        <img src="Adeline/A D2.jpg" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Specs</h5>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tour Card 12 -->
+                <div class="col-md-4 col-sm-6 mb-4">
+                    <div class="card tour-card" data-bs-toggle="modal" data-bs-target="#tourModal12">
+                        <img src="Adeline/A D3.jpg" class="card-img-top img-fluid tour-card-img" alt="Mount Batur">
+                        <div class="card-body">
+                            <h5 class="card-title">Floor Plan</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Modal 1 -->
+<div class="modal fade" id="tourModal1" tabindex="-1" aria-labelledby="tourModalLabel1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel1">Midori Mid-Rise Condo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Midori/Mi D1.jpg" class="img-fluid rounded" alt="Uluwatu Temple">
+                <h5 class="mt-3"><strong>Specifications:</strong></h5>
+                <ul class="list-unstyled">
+                    <li>FLOOR AREA - 50</li>
+                    <li>COMPLETE TURN OVER</li>
+                    <li>PROPERTY FEATURES</li>
+                    <li>Mid Rise Building</li>
+                    <li>2 Bedroom</li>
+                    <li>Dining Area</li>
+                    <li>Living Area</li>
+                    <li>Kitchen Area</li>
+                    <li>Toilet & Bathroom</li>
+                    <li>Patio</li>
+                    <li>Free Use Parking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+<div class="modal fade" id="tourModal2" tabindex="-1" aria-labelledby="tourModalLabel2" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel2">Specs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Midori/Mi D2 (2).jpg" class="img-fluid rounded" alt="Tegallalang Rice Terraces">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 3 -->
+<div class="modal fade" id="tourModal3" tabindex="-1" aria-labelledby="tourModalLabel3" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel3">Floor Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Midori/Mi D3.jpg" class="img-fluid rounded" alt="Sacred Monkey Forest">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 4 -->
+<div class="modal fade" id="tourModal4" tabindex="-1" aria-labelledby="tourModalLabel4" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel4">Jasmine</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Jasmine/J D1.jpg" class="img-fluid rounded" alt="Mount Batur">
+                <ul class="list-unstyled">
+                    <li>FLOOR AREA - 44.5 SQM</li>
+                    <li>LOT AREA - 58.5 SQM</li>
+                    <li>PROPERTY PROVISION</li>
+                    <li>2 Storey</li>
+                    <li>2 Bedroom</li>
+                    <li>Dining Area</li>
+                    <li>Living Area</li>
+                    <li>Kitchen Area</li>
+                    <li>Toilet & Bathroom</li>
+                    <li>Service Area</li>
+                    <li>Carport</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 5 -->
+<div class="modal fade" id="tourModal5" tabindex="-1" aria-labelledby="tourModalLabel5" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel5">Specs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Jasmine/J D2.png" class="img-fluid rounded" alt="Besakih Temple">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 6 -->
+<div class="modal fade" id="tourModal6" tabindex="-1" aria-labelledby="tourModalLabel6" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel6">Floor Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Jasmine/J D3.png" class="img-fluid rounded" alt="Nusa Penida">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 7 -->
+<div class="modal fade" id="tourModal7" tabindex="-1" aria-labelledby="tourModalLabel7" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel7">Linnea</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Linea/L D1.jpg" class="img-fluid rounded" alt="Linea">
+                <ul class="list-unstyled">
+                    <li>FLOOR AREA-77.25 SQM</li>
+                    <li>LOT AREA - 100 SQM</li>
+                    <li>PROPERTY PROVISION</li>
+                    <li>2 Storey</li>
+                    <li>3 Bedroom</li>
+                    <li>Dining Area</li>
+                    <li>Living Area</li>
+                    <li>Kitchen Area</li>
+                    <li>2 Toilet & Bathroom</li>
+                    <li>Service Area</li>
+                    <li>2 Carport</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 8 -->
+<div class="modal fade" id="tourModal8" tabindex="-1" aria-labelledby="tourModalLabel8" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel8">Specs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Jasmine/J D2.png" class="img-fluid rounded" alt="Specs">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 9 -->
+<div class="modal fade" id="tourModal9" tabindex="-1" aria-labelledby="tourModalLabel9" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel9">Floor Plan</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Jasmine/J D3.png" class="img-fluid rounded" alt="Floor Plan">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 10 -->
+<div class="modal fade" id="tourModal10" tabindex="-1" aria-labelledby="tourModalLabel10" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel10">Adeline</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Adeline/A D1.jpg" class="img-fluid rounded" alt="Adeline">
+                <ul class="list-unstyled">
+                    <li>FLOOR AREA 40 SQM</li>
+                    <li>LOT AREA-90 SQM</li>
+                    <li>PROPERTY PROVISION</li>
+                    <li>Bungalow</li>
+                    <li>Bedroom</li>
+                    <li>Dining Area</li>
+                    <li>Living Area</li>
+                    <li>Kitchen Area</li>
+                    <li>Toilet & Bathroom</li>
+                    <li>Service Area</li>
+                    <li>Carport</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 11 -->
+<div class="modal fade" id="tourModal11" tabindex="-1" aria-labelledby="tourModalLabel11" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel11">Specs</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Adeline/A D2.jpg" class="img-fluid rounded" alt="Specs">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal 12 -->
+<div class="modal fade" id="tourModal12" tabindex="-1" aria-labelledby="tourModalLabel12" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="tourModalLabel12">Floor Design</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="Adeline/A D3.jpg" class="img-fluid rounded" alt="Floor Design">
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Discover The Project of Lemoubrèza</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="mb-3">AXEIA Homes offers</h3>
+                    <p class="lead">Affordable housing options in the Philippines, making affordable homes and new heights of growth and progress available to every Filipino.</p>
+                    <p class="lead">Today, AXEIA has several affordable housing projects in Cavite, Laguna, Batangas, Rizal, Pampanga and Metro Manila. Our affordable homes ensure that accessibility, security, value, and sustainability are within your family's reach. With AXEIA, we make sure that true happiness can start here!</p>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="VID.jpg" alt="Project Image" class="img-fluid" style="max-width: 80%; height: auto;">
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="lead">For more information, watch our <a
+                        href="https://youtube.com/shorts/1auYB4iRVF8?si=zSwcQPP8sOgN5wTg" target="_blank"
+                        class="btn btn-primary">YouTube Video</a></p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5" style="background-color: #0a4275; color: white;">
+        <div class="container text-center">
+            <h4 class="text-uppercase">Get In Touch</h4>
+            <h2 class="fst-italic">Contact Us</h2>
+            <hr style="width: 50px; border: 1px solid white; margin: 10px auto;">
+            <div class="row mt-4">
+                <div class="col-md-8 offset-md-2 text-start">
+                    <p><strong>Administrative Office Address</strong><br>
+                        Unit 23 3rd floor NDN Building San Roque, Sto. Tomas Batangas</p>
+                    <p><strong>Contact Number</strong><br>
+                        (63) 0926-168-9935</p>
+                    <p><strong>Email Address</strong><br>
+                        angkapartnermosarealestate@gmail.com</p>
+                </div>
+            </div>
+            <div class="mt-4">
+                <h5>Connect With Us</h5>
+                <div class="d-flex flex-wrap justify-content-center"></div>
+                <a href="https://www.facebook.com/gehrylpat.aguilar" class="btn btn-outline-light mx-2 mb-2" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-f fa-lg"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/im_southproperties?igsh=MTRudTY3OG5lMm1kMQ==" class="btn btn-outline-light mx-2 mb-2" target="_blank">
+                    <i class="fab fa-instagram fa-lg"></i> Instagram
+                </a>
+                <a href="https://youtube.com/@iam.pataguilar?si=tJvlPEKtCo0OyvIo" class="btn btn-outline-light mx-2 mb-2" target="_blank">
+                    <i class="fab fa-youtube fa-lg"></i> YouTube
+                </a>
+                <a href="https://t.me/your_telegram_username" class="btn btn-outline-light mx-2 mb-2" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-telegram-plane fa-lg"></i> Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
